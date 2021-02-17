@@ -1,0 +1,34 @@
+<table mat-table [dataSource]="tableData" class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">
+      <div class="nameHolder">
+        <img [src]="'https://s2.coinmarketcap.com/static/img/coins/64x64/'+element.id+'.png'" class="assetImg">
+        <div class="nameTag">
+          <span class="boldTag">{{element.name}}</span> {{element.symbol}}
+        </div>
+      </div>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>Price</th>
+    <td mat-cell *matCellDef="let element">{{element.quote.usd.price| currency }}</td>
+  </ng-container>
+  <ng-container matColumnDef="change24">
+    <th mat-header-cell *matHeaderCellDef>24h</th>
+    <td mat-cell *matCellDef="let element"
+      [ngClass]="(element.quote.usd.percent_change_24h<0)?'redNumber':'greenNumber'">
+      {{element.quote.usd.percent_change_24h| number}} %</td>
+  </ng-container>
+  <ng-container matColumnDef="change7d">
+    <th mat-header-cell *matHeaderCellDef>7d</th>
+    <td mat-cell *matCellDef="let element">{{element.quote.usd.percent_change_7d| number}} %</td>
+  </ng-container>
+  <ng-container matColumnDef="marketCap">
+    <th mat-header-cell *matHeaderCellDef>Market cap.</th>
+    <td mat-cell *matCellDef="let element">{{element.quote.usd.market_cap| currency:'USD':'symbol':'4.0'}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
+</table>

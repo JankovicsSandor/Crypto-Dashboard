@@ -1,0 +1,38 @@
+table {
+  width: 100%;
+}
+
+.redNumber {
+  color: red;
+}
+
+.redNumber::before {
+  content: "🢃";
+}
+
+.greenNumber {
+  color: green;
+}
+
+.boldTag {
+  font-weight: bold;
+}
+
+.greenNumber::before {
+  content: "🡹";
+}
+
+.assetImg {
+  width: 25px;
+  height: 25px;
+}
+
+.nameHolder {
+  display: flex;
+  align-items: center;
+}
+
+.nameTag {
+  flex-direction: row;
+  margin-left: 16px;
+}
