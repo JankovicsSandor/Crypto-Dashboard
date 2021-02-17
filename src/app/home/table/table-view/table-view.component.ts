@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { CryptoItem, CryptoResponse } from '../models/crypto-response';
+import { CryptoItem, CryptoResponse } from '../../../models/crypto-response';
 
 @Component({
   selector: 'app-table-view',

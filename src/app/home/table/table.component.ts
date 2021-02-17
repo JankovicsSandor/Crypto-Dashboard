@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
-import { CryptoResponse } from './models/crypto-response';
-import { CryptoBusinessLogicService } from './services/bussiness-logic/crypto-business-logic.service';
+import { CryptoDataQuery } from 'src/app/store/crypto-data/crypto-data.query';
+import { CryptoResponse } from '../../models/crypto-response';
 
 @Component({
   selector: 'app-table',
@@ -10,7 +10,7 @@ import { CryptoBusinessLogicService } from './services/bussiness-logic/crypto-bu
 })
 export class TableComponent implements OnInit {
 
-  constructor(public cryptoLogic: CryptoBusinessLogicService) { }
+  constructor(public dataQuery: CryptoDataQuery) { }
 
   ngOnInit(): void {
 

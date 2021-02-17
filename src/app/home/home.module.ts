@@ -8,7 +8,6 @@ import { HomeComponent } from './home.component';
 import { TableComponent } from './table/table.component';
 import { MatTableModule } from "@angular/material/table";
 import { CryptoDataProviderService } from './table/services/data-provider/crypto-data-provider.service';
-import { CryptoBusinessLogicService } from './table/services/bussiness-logic/crypto-business-logic.service';
 
 @NgModule({
   declarations: [HomeComponent, TableComponent, TableViewComponent],
@@ -18,6 +17,10 @@ import { CryptoBusinessLogicService } from './table/services/bussiness-logic/cry
     MatTableModule,
     HttpClientModule
   ],
-  providers: [CryptoDataProviderService, CryptoBusinessLogicService]
+  providers: [CryptoDataProviderService]
 })
-export class HomeModule { }
+export class HomeModule {
+  constructor(private dataProvider: CryptoDataProviderService) {
+    this.dataProvider.refreshList();
+  }
+}
