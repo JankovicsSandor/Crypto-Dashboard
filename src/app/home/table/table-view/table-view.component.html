@@ -22,7 +22,9 @@
   </ng-container>
   <ng-container matColumnDef="change7d">
     <th mat-header-cell *matHeaderCellDef>7d</th>
-    <td mat-cell *matCellDef="let element">{{element.quote.usd.percent_change_7d| number}} %</td>
+    <td mat-cell *matCellDef="let element"
+      [ngClass]="(element.quote.usd.percent_change_24h<0)?'redNumber':'greenNumber'">
+      {{element.quote.usd.percent_change_7d| number}} %</td>
   </ng-container>
   <ng-container matColumnDef="marketCap">
     <th mat-header-cell *matHeaderCellDef>Market cap.</th>
