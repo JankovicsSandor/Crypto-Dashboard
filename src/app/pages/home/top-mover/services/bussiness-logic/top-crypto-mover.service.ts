@@ -1,8 +1,8 @@
 import { ReplaySubject } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { CryptoDataQuery } from 'src/app/store/crypto-data/crypto-data.query';
 import { map } from "rxjs/operators"
-import { CryptoItem } from 'src/app/models/crypto-response';
+import { CryptoItem } from 'projects/shared/src/api-response/crypto-response';
+import { CryptoDataQuery } from '@store';
 
 @Injectable()
 export class TopCryptoMoverService {

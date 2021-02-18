@@ -6,10 +6,10 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { TableComponent } from './table/table.component';
 import { MatTableModule } from "@angular/material/table";
-import { CryptoDataProviderService } from './table/services/data-provider/crypto-data-provider.service';
 import { TopMoverModule } from './top-mover/top-mover.module';
 import { MatCardModule } from '@angular/material/card';
-import { PipesModule } from '../pipes/pipes.module';
+import { PipesModule } from '../../pipes/pipes.module';
+import { CryptoDataProviderService } from "@data-provider"
 
 @NgModule({
   declarations: [HomeComponent, TableComponent, TableViewComponent],
@@ -21,7 +21,7 @@ import { PipesModule } from '../pipes/pipes.module';
     MatCardModule,
     PipesModule
   ],
-  providers: [CryptoDataProviderService]
+  providers: []
 })
 export class HomeModule {
   constructor(private dataProvider: CryptoDataProviderService) {

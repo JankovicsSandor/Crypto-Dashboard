@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Query } from '@datorama/akita';
 import { Observable } from 'rxjs';
-import { CryptoResponse } from 'src/app/models/crypto-response';
+import { CryptoResponse } from 'projects/shared/src/api-response/crypto-response';
 import { CryptoDataStore } from './crypto-data.store';
 
 @Injectable()

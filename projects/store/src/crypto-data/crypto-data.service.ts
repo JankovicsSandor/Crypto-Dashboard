@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CryptoItem, CryptoResponse } from 'src/app/models/crypto-response';
+import { CryptoItem, CryptoResponse } from 'projects/shared/src/api-response/crypto-response';
 import { CryptoDataStore } from './crypto-data.store';
 
 @Injectable()

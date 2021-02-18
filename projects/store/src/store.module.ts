@@ -11,6 +11,7 @@ import { CryptoDataStore } from './crypto-data/crypto-data.store';
   imports: [
     CommonModule
   ],
-  providers: [CryptoDataService, CryptoDataQuery, CryptoDataStore]
+  providers: [CryptoDataService, CryptoDataQuery, CryptoDataStore],
+  exports: []
 })
 export class StoreModule { }

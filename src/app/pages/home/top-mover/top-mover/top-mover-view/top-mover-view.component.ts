@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { CryptoItem } from 'src/app/models/crypto-response';
+import { CryptoItem } from 'projects/shared/src/api-response/crypto-response';
 
 @Component({
   selector: 'app-top-mover-view',

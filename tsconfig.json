@@ -14,6 +14,17 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "@data-provider": [
+        "projects/data-provider/src/public-api"
+      ],
+      "@shared": [
+        "projects/shared/src/public-api"
+      ],
+      "@store": [
+        "projects/store/src/public-api"
+      ]
+    },
     "target": "es2015",
     "module": "es2020",
     "lib": [
