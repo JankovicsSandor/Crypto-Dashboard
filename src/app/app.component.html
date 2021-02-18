@@ -1,11 +1,10 @@
-<mat-sidenav-container class="example-container">
+<mat-sidenav-container class="example-container" *ngIf="userQuery.getUserData()|async as userData">
   <mat-sidenav mode="side" opened>
     <div class="text-center">
-      <img class="faceIcon"
-        src="https://media-exp1.licdn.com/dms/image/C4D03AQFZ6l7f80PItw/profile-displayphoto-shrink_200_200/0/1606568444323?e=1617235200&v=beta&t=jr759MzE0U7Gsjc5RyXGfF9kaLogwOcq9n_S8-scoCw">
+      <img class="faceIcon" [src]="userData.profilePicture">
     </div>
     <div class="text-center my-1">
-      <span class="name">Rózsahegyi Zsanett</span>
+      <span class="name">{{userData.name}}</span>
     </div>
     <mat-nav-list>
       <mat-expansion-panel expanded>
