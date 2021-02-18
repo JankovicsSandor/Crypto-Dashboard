@@ -1,3 +1,4 @@
+import { UserProfileQuery } from '@store';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
