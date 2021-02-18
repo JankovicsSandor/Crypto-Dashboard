@@ -1,0 +1,18 @@
+<div class="card mat-elevation-z2">
+  <div class="d-flex align-items-center">
+    <div class="indexPicture">
+      <img [src]="'https://s2.coinmarketcap.com/static/img/coins/64x64/'+crpytoData?.id+'.png'" class="assetImg">
+    </div>
+    <div class="text-center">
+      <h3>
+        {{crpytoData?.name}}
+      </h3>
+    </div>
+  </div>
+  <div>
+    <h4 [ngClass]="(crpytoData.quote.usd.percent_change_24h<0)?'redNumber':'greenNumber'" class="text-center">
+      {{crpytoData.quote.usd.percent_change_24h| number}} %
+    </h4>
+  </div>
+
+</div>

@@ -9,12 +9,14 @@ import { CryptoItem, CryptoResponse } from '../../../models/crypto-response';
 })
 export class TableViewComponent implements OnInit {
 
-  @Input() set datasource(value: CryptoResponse) {
-    this.tableData.data = value.data;
+  @Input() set datasource(value: CryptoResponse | null) {
+    if (value != null) {
+      this.tableData.data = value.data;
+    }
   };
 
   tableData = new MatTableDataSource(<CryptoItem[]>[]);
-  displayedColumns = ["name", "price", "change24", "change7d", "marketCap"];
+  displayedColumns = ["name", "price", "volume", "change24"];
   constructor() { }
 
   ngOnInit(): void {

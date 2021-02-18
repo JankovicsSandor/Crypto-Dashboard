@@ -2,24 +2,8 @@ table {
   width: 100%;
 }
 
-.redNumber {
-  color: red;
-}
-
-.redNumber::before {
-  content: "🢃";
-}
-
-.greenNumber {
-  color: green;
-}
-
 .boldTag {
   font-weight: bold;
-}
-
-.greenNumber::before {
-  content: "🡹";
 }
 
 .assetImg {
