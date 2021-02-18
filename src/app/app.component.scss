@@ -1,0 +1,33 @@
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.faceIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+mat-sidenav {
+  width: 250px;
+  padding-top: 24px;
+}
+
+.faceIcon {
+  font-size: 24px;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 24px;
+  padding-left: 8px;
+}

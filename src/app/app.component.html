@@ -1,1 +1,73 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <div class="text-center">
+      <img class="faceIcon"
+        src="https://media-exp1.licdn.com/dms/image/C4D03AQFZ6l7f80PItw/profile-displayphoto-shrink_200_200/0/1606568444323?e=1617235200&v=beta&t=jr759MzE0U7Gsjc5RyXGfF9kaLogwOcq9n_S8-scoCw">
+    </div>
+    <div class="text-center my-1">
+      <span class="name">Rózsahegyi Zsanett</span>
+    </div>
+    <mat-nav-list>
+      <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>Menu</mat-expansion-panel-header>
+        <a mat-list-item routerLink="">
+          <mat-icon>dashboard</mat-icon>
+          <span class="ms-3">Dashboard</span>
+        </a>
+        <a mat-list-item routerLink="exchange">
+          <mat-icon>waterfall_chart</mat-icon>
+          <span class="ms-3">Exchange</span>
+        </a>
+      </mat-expansion-panel>
+      <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>Account</mat-expansion-panel-header>
+        <a mat-list-item routerLink="profile">
+          <mat-icon>assignment_ind</mat-icon>
+          <span class="ms-3">Profile</span>
+        </a>
+        <a mat-list-item routerLink="history">
+          <mat-icon>history</mat-icon>
+          <span class="ms-3">My history</span>
+        </a>
+        <a mat-list-item routerLink="wallet">
+          <mat-icon>account_balance_wallet</mat-icon>
+          <span class="ms-3">Wallets</span>
+        </a>
+        <a mat-list-item routerLink="support">
+          <mat-icon>help</mat-icon>
+          <span class="ms-3">Support</span>
+        </a>
+      </mat-expansion-panel>
+      <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>System</mat-expansion-panel-header>
+        <a mat-list-item routerLink="notifications">
+          <mat-icon>notification_important</mat-icon>
+          <span class="ms-3">Notifications</span>
+        </a>
+        <a mat-list-item routerLink="settings">
+          <mat-icon>settings</mat-icon>
+          <span class="ms-3">Settings</span>
+        </a>
+      </mat-expansion-panel>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Crypto Exchange</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
