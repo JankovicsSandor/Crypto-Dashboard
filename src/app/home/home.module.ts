@@ -1,4 +1,3 @@
-import { HttpClientModule } from '@angular/common/http';
 import { TableViewComponent } from './table/table-view/table-view.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,6 +7,9 @@ import { HomeComponent } from './home.component';
 import { TableComponent } from './table/table.component';
 import { MatTableModule } from "@angular/material/table";
 import { CryptoDataProviderService } from './table/services/data-provider/crypto-data-provider.service';
+import { TopMoverModule } from './top-mover/top-mover.module';
+import { MatCardModule } from '@angular/material/card';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [HomeComponent, TableComponent, TableViewComponent],
@@ -15,7 +17,9 @@ import { CryptoDataProviderService } from './table/services/data-provider/crypto
     CommonModule,
     HomeRoutingModule,
     MatTableModule,
-    HttpClientModule
+    TopMoverModule,
+    MatCardModule,
+    PipesModule
   ],
   providers: [CryptoDataProviderService]
 })

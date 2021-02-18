@@ -8,7 +8,7 @@ export class CryptoResponse {
 export class CryptoItem {
   name: string = "";
   id: number = 0;
-  Quote: CrptoQuote = new CrptoQuote();
+  quote: CrptoQuote = new CrptoQuote();
 }
 
 export class CrptoQuote {
