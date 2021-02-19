@@ -12,14 +12,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { DataProviderModule } from '@data-provider';
 import { StoreModule } from '@store';
+import { RedirectAuthUserGuard } from 'src/guards/redirect-auth-user.guard';
+import { HomeModule } from './pages/home/home.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, BrowserAnimationsModule,
     MatButtonModule, MatToolbarModule,
     MatIconModule, MatListModule,
     AppRoutingModule, MatExpansionModule,
-    StoreModule, DataProviderModule, MatSidenavModule],
-  providers: [],
+    StoreModule, DataProviderModule, MatSidenavModule, HomeModule],
+  providers: [RedirectAuthUserGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
