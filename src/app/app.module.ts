@@ -12,8 +12,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { DataProviderModule } from '@data-provider';
 import { StoreModule } from '@store';
-import { RedirectAuthUserGuard } from 'src/guards/redirect-auth-user.guard';
 import { HomeModule } from './pages/home/home.module';
+import { RedirectAuthUserGuard } from 'src/guards/redirect-auth-user/redirect-auth-user.guard';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, BrowserAnimationsModule,

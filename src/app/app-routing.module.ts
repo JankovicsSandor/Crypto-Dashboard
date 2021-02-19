@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RedirectAuthUserGuard } from 'src/guards/redirect-auth-user.guard';
+import { RedirectAuthUserGuard } from 'src/guards/redirect-auth-user/redirect-auth-user.guard';
 
 const routes: Routes = [{ path: '', canActivate: [RedirectAuthUserGuard], loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
 { path: 'dashboard', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) },
