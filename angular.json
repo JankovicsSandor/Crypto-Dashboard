@@ -245,6 +245,46 @@
           }
         }
       }
+    },
+    "ui-view": {
+      "projectType": "library",
+      "root": "projects/ui-view",
+      "sourceRoot": "projects/ui-view/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ui-view/tsconfig.lib.json",
+            "project": "projects/ui-view/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-view/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ui-view/src/test.ts",
+            "tsConfig": "projects/ui-view/tsconfig.spec.json",
+            "karmaConfig": "projects/ui-view/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ui-view/tsconfig.lib.json",
+              "projects/ui-view/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "coin-market"
