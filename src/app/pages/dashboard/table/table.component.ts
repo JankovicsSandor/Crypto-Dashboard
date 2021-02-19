@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CryptoDataQuery } from '@store';
-import { ReplaySubject } from 'rxjs';
 
 @Component({
   selector: 'app-table',
