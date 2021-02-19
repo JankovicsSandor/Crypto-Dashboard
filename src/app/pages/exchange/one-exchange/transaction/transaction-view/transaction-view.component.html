@@ -1,0 +1,23 @@
+<form [formGroup]="transactionForm">
+  <mat-tab-group>
+    <mat-tab label="Buy">
+      <mat-form-field appearance="outline">
+        <mat-label>Amount $ ({{selectedItem.symbol}})</mat-label>
+        <input matInput placeholder="0.00" formControlName="amount" type="number">
+        <span matPrefix>$</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+      <button mat-flat-button color="primary">Buy</button>
+    </mat-tab>
+    <mat-tab label="Sell">
+      <mat-form-field appearance="outline">
+        <mat-label>Amount $ ({{selectedItem.symbol}})</mat-label>
+        <input matInput placeholder="0.00" formControlName="amount" type="number">
+        <span matPrefix>$</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+      <button mat-flat-button color="primary">Sell</button>
+    </mat-tab>
+
+  </mat-tab-group>
+</form>

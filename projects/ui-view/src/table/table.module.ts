@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from './table.component';
@@ -12,7 +13,8 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
   imports: [
     CommonModule,
     MatTableModule,
-    PipesModule
+    PipesModule,
+    RouterModule
   ],
   exports: [TableComponent]
 })

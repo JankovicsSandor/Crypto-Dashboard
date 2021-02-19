@@ -1,3 +1,4 @@
+import { CryptoDataService } from './../../../store/src/crypto-data/crypto-data.service';
 import { Component, OnInit } from '@angular/core';
 import { CryptoDataQuery } from '@store';
 
@@ -11,7 +12,7 @@ export class TableComponent implements OnInit {
   constructor(public dataQuery: CryptoDataQuery) { }
 
   ngOnInit(): void {
-
+    this.dataQuery.getAllCryptoData().subscribe((val) => console.log(val));
   }
 
 }

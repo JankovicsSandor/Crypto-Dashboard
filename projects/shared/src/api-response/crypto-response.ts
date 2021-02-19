@@ -8,6 +8,7 @@ export class CryptoResponse {
 export class CryptoItem {
   name: string = "";
   id: number = 0;
+  symbol: string = "";
   quote: CrptoQuote = new CrptoQuote();
 }
 

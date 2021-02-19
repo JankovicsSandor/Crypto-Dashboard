@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
-import { CryptoItem, CryptoResponse } from 'projects/shared/src/api-response/crypto-response';
+import { CryptoResponse } from 'projects/shared/src/api-response/crypto-response';
 
 function createInitialState(): CryptoResponse {
   return new CryptoResponse();

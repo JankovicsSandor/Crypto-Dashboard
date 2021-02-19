@@ -1,0 +1,12 @@
+<div class="d-flex align-items-center">
+  <div>
+    <img *ngIf="selectedCrpyto.id"
+      [src]="'https://s2.coinmarketcap.com/static/img/coins/64x64/'+selectedCrpyto.id+'.png'">
+  </div>
+  <div class="ms-3">
+    <h3>{{selectedCrpyto.name}}</h3>
+    <div>
+      {{selectedCrpyto.symbol}}
+    </div>
+  </div>
+</div>
