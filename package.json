@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --ssl --ssl-key C:/Users/Sanyi/Desktop/generate-trusted-ssl-certificate/server.key --ssl-cert C:/Users/Sanyi/Desktop/generate-trusted-ssl-certificate/server.crt",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@amcharts/amcharts4": "^4.10.15",
     "@angular/animations": "~11.1.2",
     "@angular/cdk": "^11.2.0",
     "@angular/common": "~11.1.2",

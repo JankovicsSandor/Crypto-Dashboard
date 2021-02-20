@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { OneExchangeComponent } from './one-exchange.component';
 import { SelectedAssetModule } from './selected-asset/selected-asset.module';
 import { TransactionModule } from './transaction/transaction.module';
-
+import { ChartModule } from './chart/chart.module'
 
 @NgModule({
   declarations: [OneExchangeComponent],
@@ -14,7 +14,8 @@ import { TransactionModule } from './transaction/transaction.module';
     MatCardModule,
     SelectedAssetModule,
     OneExchangeRoutingModule,
-    TransactionModule
+    TransactionModule,
+    ChartModule
   ],
   exports: [OneExchangeComponent]
 })

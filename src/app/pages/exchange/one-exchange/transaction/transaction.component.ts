@@ -1,5 +1,6 @@
 import { SelectedAssetQuery } from '@store';
 import { Component, OnInit } from '@angular/core';
+import { CreateTransaction } from '@shared';
 
 @Component({
   selector: 'app-transaction',
@@ -11,6 +12,11 @@ export class TransactionComponent implements OnInit {
   constructor(public selectedAsset: SelectedAssetQuery) { }
 
   ngOnInit(): void {
+  }
+
+  createTransaction(transactionDetail: CreateTransaction) {
+    // TODO involve BE for this
+    console.log(transactionDetail)
   }
 
 }

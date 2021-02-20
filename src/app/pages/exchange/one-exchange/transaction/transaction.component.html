@@ -1,1 +1,2 @@
-<transaction-view [asset]="selectedAsset.getSelectedCryptoItem()|async"></transaction-view>
+<transaction-view [asset]="selectedAsset.getSelectedCryptoItem()|async" (createTransaction)="createTransaction($event)">
+</transaction-view>
