@@ -6,7 +6,7 @@ import { OneExchangeComponent } from './one-exchange.component';
 import { SelectedAssetModule } from './selected-asset/selected-asset.module';
 import { TransactionModule } from './transaction/transaction.module';
 import { ChartModule } from './chart/chart.module';
-import { NewsModule } from './news/news/news.module'
+import { NewsModule } from './news/news.module'
 
 @NgModule({
   declarations: [OneExchangeComponent],
