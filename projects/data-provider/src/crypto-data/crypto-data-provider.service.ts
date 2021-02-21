@@ -8,11 +8,12 @@ import { CryptoItem } from "@shared"
 
 @Injectable()
 export class CryptoDataProviderService {
-  constructor(private http: BaseHttpClientService, private cryptoDataStore: CryptoDataService, private selectedAssetService: SelectedAssetService) { }
+  constructor(private http: BaseHttpClientService,
+    private cryptoDataService: CryptoDataService, private selectedAssetService: SelectedAssetService) { }
 
   refreshList() {
     this.http.get<CryptoResponse>("coinmarket/latest").subscribe((val) => {
-      this.cryptoDataStore.setCryptoData(val);
+      this.cryptoDataService.setCryptoData(val);
     });
   }
 

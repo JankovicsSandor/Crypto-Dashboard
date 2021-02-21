@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CryptoDataProviderService } from '@data-provider';
+import { CryptoDataProviderService, CryptoNewsDataProviderService } from '@data-provider';
 
 @Component({
   selector: 'app-one-exchange',
@@ -9,7 +9,8 @@ import { CryptoDataProviderService } from '@data-provider';
 })
 export class OneExchangeComponent implements OnInit, AfterViewInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private cryptoDataProviderService: CryptoDataProviderService) {
+  constructor(private activatedRoute: ActivatedRoute,
+    private router: Router, private cryptoDataProviderService: CryptoDataProviderService, private newsDataProvider: CryptoNewsDataProviderService) {
 
   }
 
@@ -22,6 +23,8 @@ export class OneExchangeComponent implements OnInit, AfterViewInit {
         let assetId = params['assetId'];
         if (assetId) {
           this.cryptoDataProviderService.getOneCryptoData(assetId);
+          // TODO remove hardcode
+          this.newsDataProvider.getLatestNews("BTC");
         }
       } catch (error) {
         this.router.navigate(["/exchange"]);

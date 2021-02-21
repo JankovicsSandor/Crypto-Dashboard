@@ -1,6 +1,7 @@
 
 import { Injectable } from '@angular/core';
 import { UserProfileData } from '@shared';
+import { NewsService } from '@store';
 import { of } from 'rxjs';
 import { BaseHttpClientService } from '../base-client/base-http-client.service';
 

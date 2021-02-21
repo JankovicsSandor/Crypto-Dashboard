@@ -1,1 +1,12 @@
-<p>news-view works!</p>
+<div *ngFor="let article of articleList">
+  <div class="d-flex my-3 py-4">
+    <div class="content">
+      <h3>{{article.title}}</h3>
+      <p>{{article.description}}</p>
+    </div>
+    <div class="picture">
+      <img [src]="article.pictureLink" class="articlePicture">
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+</div>

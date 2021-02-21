@@ -1,3 +1,5 @@
+import { NewsService } from './crypto-news/news.service';
+import { NewsStore } from './crypto-news/news.store';
 import { SelectedAssetService } from './selected-asset/selected-asset.service';
 import { SelectedAssetQuery } from './selected-asset/selected-asset.query';
 import { UserProfileStore } from './user-profile/user-profile.store';
@@ -9,6 +11,7 @@ import { CryptoDataService } from './crypto-data/crypto-data.service';
 import { CryptoDataQuery } from './crypto-data/crypto-data.query';
 import { CryptoDataStore } from './crypto-data/crypto-data.store';
 import { SelectedAssetStore } from './selected-asset/selected-asset.store';
+import { NewsQuery } from './crypto-news';
 
 
 
@@ -18,7 +21,9 @@ import { SelectedAssetStore } from './selected-asset/selected-asset.store';
     CommonModule
   ],
   providers: [CryptoDataService, CryptoDataQuery, CryptoDataStore,
-    UserProfileQuery, UserProfileService, UserProfileStore, SelectedAssetStore, SelectedAssetQuery, SelectedAssetService],
+    UserProfileQuery, UserProfileService, UserProfileStore,
+    NewsStore, NewsQuery, NewsService,
+    SelectedAssetStore, SelectedAssetQuery, SelectedAssetService],
   exports: []
 })
 export class StoreModule { }

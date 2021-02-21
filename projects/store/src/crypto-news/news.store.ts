@@ -1,19 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
+import { CryptoAssetNews, CryptoAssetStore } from '@shared';
 
-export interface NewsState {
-   key: string;
+function createInitialState(): CryptoAssetStore {
+  return new CryptoAssetStore();
 }
 
-export function createInitialState(): NewsState {
-  return {
-    key: ''
-  };
-}
-
-@Injectable({ providedIn: 'root' })
+@Injectable()
 @StoreConfig({ name: 'news' })
-export class NewsStore extends Store<NewsState> {
+export class NewsStore extends Store<CryptoAssetStore> {
 
   constructor() {
     super(createInitialState());

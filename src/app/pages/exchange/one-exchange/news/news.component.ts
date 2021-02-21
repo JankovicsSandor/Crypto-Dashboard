@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsQuery } from '@store';
 
 @Component({
   selector: 'app-news',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public newsQuery: NewsQuery) { }
 
   ngOnInit(): void {
   }

@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Query } from '@datorama/akita';
-import { NewsStore, NewsState } from './news.store';
+import { CryptoAssetStore } from '@shared';
+import { NewsStore } from './news.store';
 
-@Injectable({ providedIn: 'root' })
-export class NewsQuery extends Query<NewsState> {
+@Injectable()
+export class NewsQuery extends Query<CryptoAssetStore> {
 
   constructor(protected store: NewsStore) {
     super(store);
+  }
+
+  getAllNewsForAsset() {
+    return this.select();
   }
 
 }
