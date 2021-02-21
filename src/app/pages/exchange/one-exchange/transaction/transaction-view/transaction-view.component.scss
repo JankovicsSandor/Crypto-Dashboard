@@ -1,5 +1,46 @@
-.totalValue{
+.totalValue {
   flex: 1 0 auto;
   display: flex;
   justify-content: flex-end;
+}
+
+body {
+  background: #16a085;
+}
+.content {
+  height: auto;
+  margin: 0 auto;
+  padding: 30px;
+}
+.nav-item {
+  width: 50%;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.nav-pills .nav-link {
+  font-weight: bold;
+  padding-top: 13px;
+  text-align: center;
+  background: #343436;
+  color: #fff;
+  border-radius: 30px;
+  height: 100px;
+}
+.nav-pills .nav-link.active {
+  background: #fff;
+  color: #000;
+}
+.tab-content {
+  position: relative;
+  height: auto;
+  margin-top: -50px;
+  background: #fff;
+  color: #000;
+  border-radius: 15px;
+  z-index: 1000;
+  padding: 30px;
+  margin-bottom: 50px;
 }

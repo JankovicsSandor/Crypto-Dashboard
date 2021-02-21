@@ -1,20 +1,21 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CreateTransaction, CryptoItem } from '@shared';
+import { BehaviorSubject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
-import { MatTabChangeEvent } from '@angular/material/tabs';
 
 @Component({
   selector: 'transaction-view',
   templateUrl: './transaction-view.component.html',
-  styleUrls: ['./transaction-view.component.scss']
+  styleUrls: ['./transaction-view.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TransactionViewComponent implements OnInit {
   selectedItem: CryptoItem = new CryptoItem();
   transactionForm: FormGroup;
-  total: number;
+  total: BehaviorSubject<number> = new BehaviorSubject(0);
 
-  transactionType: 'buy' | 'sell' = "buy";
+  transactionType$: BehaviorSubject<string> = new BehaviorSubject('buy');
 
   @Output() createTransaction: EventEmitter<CreateTransaction> = new EventEmitter();
 
@@ -31,27 +32,21 @@ export class TransactionViewComponent implements OnInit {
     })
 
     this.transactionForm.valueChanges.pipe(debounceTime(100)).subscribe((value) => {
-      this.total = value.amount / this.selectedItem.quote.usd.price;
+      this.total.next(value.amount / this.selectedItem.quote.usd.price);
     })
-
-    this.total = 0;
   }
 
   ngOnInit(): void {
   }
 
-  setTransactionType(tabchangeEvent: MatTabChangeEvent) {
-    if (tabchangeEvent.index == 0) {
-      this.transactionType = "buy"
-    } else {
-      this.transactionType = "sell"
-    }
+  setTransactionType(transType: string) {
+    this.transactionType$.next(transType);
   }
 
   createAction() {
     let formValue = this.transactionForm.value;
     let actualValue: CreateTransaction = new CreateTransaction();
-    actualValue.orderType = this.transactionType;
+    actualValue.orderType = this.transactionType$.getValue();
     actualValue.amount = formValue.amount;
     actualValue.assetId = this.selectedItem.id;
 
