@@ -12,6 +12,8 @@ import { CryptoDataQuery } from './crypto-data/crypto-data.query';
 import { CryptoDataStore } from './crypto-data/crypto-data.store';
 import { SelectedAssetStore } from './selected-asset/selected-asset.store';
 import { NewsQuery } from './crypto-news';
+import { TransactionHistoryQuery, TransactionHistoryService } from './history';
+import { TransactionHistoryStore } from './history/transaction-history.store';
 
 
 
@@ -23,6 +25,7 @@ import { NewsQuery } from './crypto-news';
   providers: [CryptoDataService, CryptoDataQuery, CryptoDataStore,
     UserProfileQuery, UserProfileService, UserProfileStore,
     NewsStore, NewsQuery, NewsService,
+    TransactionHistoryService, TransactionHistoryQuery, TransactionHistoryStore,
     SelectedAssetStore, SelectedAssetQuery, SelectedAssetService],
   exports: []
 })
