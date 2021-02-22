@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CryptoAssetNews, CryptoAssetStore } from '@shared';
+import { CryptoAssetNews, CryptoAssetNewsStore } from '@shared';
 import { NewsStore } from './news.store';
 
 @Injectable()
@@ -9,6 +9,6 @@ export class NewsService {
 
   setNews(articles: CryptoAssetNews[]) {
 
-    this.newsStore.update(<CryptoAssetStore>{ newsList: articles });
+    this.newsStore.update(<CryptoAssetNewsStore>{ newsList: articles });
   }
 }

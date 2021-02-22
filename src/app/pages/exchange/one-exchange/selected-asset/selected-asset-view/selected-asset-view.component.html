@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center">
+<div class="d-flex align-items-center mb-3">
   <div>
     <img *ngIf="selectedCrpyto.id"
       [src]="'https://s2.coinmarketcap.com/static/img/coins/64x64/'+selectedCrpyto.id+'.png'">
@@ -10,8 +10,40 @@
     </div>
   </div>
 </div>
-<mat-divider></mat-divider>
-<div>
-  <span class="initialism">Available balance:</span>
-  <h2>1000 {{selectedCrpyto.symbol}}</h2>
+<div class="d-flex mb-3">
+  <mat-card class="col-5 me-2">
+    <div class="mt-3">
+      <span class="initialism">Available balance:</span>
+      <div>
+        <span class="invest">1000 {{selectedCrpyto.symbol}}</span>
+        <span class="fiatValue">
+          ~ {{totalFiatValue|number}} USD
+        </span>
+      </div>
+    </div>
+  </mat-card>
+  <mat-card class="col-7">
+    <div class="row">
+      <div class="col-4 mt-3">
+        <span class="initialism">Last trade price:</span>
+        <div>
+          <span class="sideText">{{selectedCrpyto.quote.usd.price|number}} USD</span>
+        </div>
+      </div>
+      <div class="col-4 mt-3">
+        <span class="initialism">24 Hour change:</span>
+        <div>
+          <span class="sideText" [ngClass]="(selectedCrpyto.quote.usd.percent_change_24h<0)?'redNumber':'greenNumber'">
+            {{selectedCrpyto.quote.usd.percent_change_24h|number:'0.0-2'}}
+            %</span>
+        </div>
+      </div>
+      <div class="col-4 mt-3">
+        <span class="initialism">24 Hour Volume:</span>
+        <div>
+          <span class="sideText">{{selectedCrpyto.quote.usd.volume_24h|shortNumber}}</span>
+        </div>
+      </div>
+    </div>
+  </mat-card>
 </div>

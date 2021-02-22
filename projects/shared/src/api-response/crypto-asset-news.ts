@@ -7,7 +7,7 @@ export class CryptoAssetNews {
   publishDate: string = "";
 }
 
-export class CryptoAssetStore {
+export class CryptoAssetNewsStore {
   newsList: CryptoAssetNews[] = [];
 }
 

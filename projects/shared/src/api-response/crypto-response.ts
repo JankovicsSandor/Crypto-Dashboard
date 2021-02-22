@@ -22,4 +22,6 @@ export class CryptoPrice {
   percent_change_24h: number = 0;
   percent_change_7d: number = 0;
   percent_change_30d: number = 0;
+  volume_24h: number = 0;
+
 }

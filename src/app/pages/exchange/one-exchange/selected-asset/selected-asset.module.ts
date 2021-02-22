@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SelectedAssetComponent } from './selected-asset.component';
 import { SelectedAssetViewComponent } from './selected-asset-view/selected-asset-view.component';
-import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 
 
@@ -10,7 +11,8 @@ import { MatDividerModule } from '@angular/material/divider';
   declarations: [SelectedAssetComponent, SelectedAssetViewComponent],
   imports: [
     CommonModule,
-    MatDividerModule
+    MatCardModule,
+    PipesModule
   ],
   exports: [SelectedAssetComponent]
 })

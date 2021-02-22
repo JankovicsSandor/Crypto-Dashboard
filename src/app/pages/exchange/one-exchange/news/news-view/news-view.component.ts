@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { CryptoAssetNews, CryptoAssetStore } from '@shared';
+import { CryptoAssetNews, CryptoAssetNewsStore } from '@shared';
 
 @Component({
   selector: 'news-view',
@@ -10,7 +10,7 @@ import { CryptoAssetNews, CryptoAssetStore } from '@shared';
 export class NewsViewComponent implements OnInit {
   articleList: CryptoAssetNews[] = [];
 
-  @Input() set newsData(articles: CryptoAssetStore | null) {
+  @Input() set newsData(articles: CryptoAssetNewsStore | null) {
     if (articles != null) {
       this.articleList = articles.newsList;
     }

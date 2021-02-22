@@ -43,10 +43,6 @@ am4core.useTheme(am4themes_animated);
       series.tooltip.label.padding(12, 12, 12, 12)
     }
 
-    // Add scrollbar
-    /*this.chart.scrollbarX = new am4charts.XYChartScrollbar();
-    this.chart.scrollbarX.series.push(series);*/
-
     // Add cursor
     this.chart.cursor = new am4charts.XYCursor();
     this.chart.cursor.xAxis = dateAxis;
