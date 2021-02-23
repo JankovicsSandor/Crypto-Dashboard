@@ -1,3 +1,4 @@
+import { TransactionHistoryQuery } from '@store';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public transactionHistory: TransactionHistoryQuery) { }
 
   ngOnInit(): void {
   }

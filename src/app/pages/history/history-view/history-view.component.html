@@ -1,0 +1,16 @@
+<div>
+  <mat-card *ngFor="let transaction of transactionHistory">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <img [src]="'https://s2.coinmarketcap.com/static/img/coins/64x64/'+transaction.assetId+'.png'" class="assetImg">
+      </div>
+      <mat-card-title>Transaction</mat-card-title>
+      <mat-card-subtitle>{{transaction.time|date:'medium'}}</mat-card-subtitle>
+      <mat-card-content>
+        <div>
+          {{transaction.amount}} BTC ~ {{transaction.fiatAmount|currency}}
+        </div>
+      </mat-card-content>
+    </mat-card-header>
+  </mat-card>
+</div>

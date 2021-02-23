@@ -1,3 +1,4 @@
+import { TransactionHistoryDataProviderService } from './transaction-history/transaction-history-data-provider.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CryptoDataProviderService, UserProfileDataProviderService } from '@data-provider';
@@ -11,7 +12,7 @@ import { CryptoNewsDataProviderService } from './crypto-news';
   imports: [
   ],
   providers: [HttpClientModule, BaseHttpClientService,
-    CryptoDataProviderService, UserProfileDataProviderService, CryptoNewsDataProviderService],
+    CryptoDataProviderService, UserProfileDataProviderService, CryptoNewsDataProviderService, TransactionHistoryDataProviderService],
   exports: [HttpClientModule]
 })
 export class DataProviderModule { }
