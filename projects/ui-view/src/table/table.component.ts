@@ -1,4 +1,3 @@
-import { CryptoDataService } from './../../../store/src/crypto-data/crypto-data.service';
 import { Component, OnInit } from '@angular/core';
 import { CryptoDataQuery } from '@store';
 

@@ -1,0 +1,81 @@
+<form [formGroup]="personalForm">
+  <h3>My Profile</h3>
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Display name</mat-label>
+        <input matInput placeholder="Display name" formControlName="displayName">
+        <mat-error *ngIf="hasError('displayName','required')">Field is required</mat-error>
+      </mat-form-field>
+
+    </div>
+    <div class="col-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input matInput placeholder="Email address" formControlName="emailAddress">
+        <mat-error *ngIf="hasError('emailAddress','required')">Field is required</mat-error>
+        <mat-error *ngIf="hasError('emailAddress','email')">Not a valid email</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <h3>Personal Details</h3>
+  <mat-divider></mat-divider>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Full Name</mat-label>
+      <input matInput placeholder="Name" formControlName="fullName">
+      <mat-error *ngIf="hasError('fullName','required')">Field is required</mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Birth Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="hasError('birtDate','required')">Field is required</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Country</mat-label>
+        <mat-select formControlName="country">
+        </mat-select>
+        <mat-error *ngIf="hasError('country','required')">Field is required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field appearance="outline">
+        <mat-label>City/town</mat-label>
+        <input matInput placeholder="Name" formControlName="city">
+        <mat-error *ngIf="hasError('city','required')">Field is required</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Post code</mat-label>
+        <input matInput placeholder="Name" formControlName="postCode">
+        <mat-error *ngIf="hasError('postCode','required')">Field is required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Street Address</mat-label>
+        <input matInput placeholder="Name" formControlName="street">
+        <mat-error *ngIf="hasError('street','required')">Field is required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field appearance="outline">
+        <mat-label>House number</mat-label>
+        <input matInput placeholder="Name" formControlName="hNumber">
+        <mat-error *ngIf="hasError('hNumber','required')">Field is required</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button color="primary">Save</button>
+</form>

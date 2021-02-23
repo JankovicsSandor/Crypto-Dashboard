@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { UserProfileDataService } from './services/user-profile-data.service';
 import { PictureViewComponent } from './user-profile-picture/picture-view/picture-view.component';
 import { MatButtonModule } from '@angular/material/button';
+import { PersonalDetailsModule } from './personal-details/personal-details.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
     ProfileRoutingModule,
     MatCardModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    PersonalDetailsModule
   ],
   providers: [UserProfileDataService]
 })

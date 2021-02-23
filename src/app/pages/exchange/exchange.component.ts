@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { CryptoDataProviderService } from '@data-provider';
 
 @Component({
@@ -9,19 +8,10 @@ import { CryptoDataProviderService } from '@data-provider';
 })
 export class ExchangeComponent implements OnInit {
 
-
+  constructor(private dataProvider: CryptoDataProviderService) {
+    this.dataProvider.refreshList();
+  }
 
   ngOnInit(): void {
   }
-
-  /*ngAfterViewInit() {
-    this.activatedRoute.params.subscribe((params) => {
-      try {
-        this.cryptoDataProviderService.getOneCryptoData(params['assetId'])
-      } catch (error) {
-        this.router.navigate(["/exchange"]);
-      }
-    })
-  }*/
-
 }
